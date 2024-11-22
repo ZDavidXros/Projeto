@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>fotos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" fullscreen>
+  <div class="photos-container">
+    <div class="photo-section">
+      <img src="assets/foto1.jpg" class="photo" alt="Foto 1">
+      <p>Nome:David Santos </p>
+
+      <p>Curso:Analise e Desenvolvimento de Sistemas</p>
+          
+      <p>Faculdade:Unisuam</p>
+      
+      <p>Turno:Manhã</p>
+    </div>
+    <div class="photo-section">
+      <img src="assets/foto2.jpg" class="photo" alt="Foto 2">
+      <p>Nome:João Gabriel </p>
+
+      <p>Curso:Analise e Desenvolvimento de Sistemas</p>
+          
+      <p>Faculdade:Unisuam</p>
+      
+      <p>Turno:Manhã</p>
+            
+    </div>
+
+    <ion-button expand="block" class="orange-button" [routerLink]="['/login']">
+      Ir para Login
+    </ion-button>
+
+  </div>
+</ion-content>

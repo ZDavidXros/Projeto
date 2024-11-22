@@ -1,0 +1,233 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="text-center text-white">Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding cadastro-container">
+  <div class="container">
+    <!-- Etapa 1: Nome -->
+    <div *ngIf="currentStep === 1" class="step">
+      <h2>Nome</h2>
+      <ion-item class="form-item">
+        <ion-label position="floating">Digite seu nome</ion-label>
+        <ion-input type="text" [(ngModel)]="nome"></ion-input>
+      </ion-item>
+      <p class="step-description">É assim que as pessoas vão te chamar, ok?</p>
+      <ion-button expand="block" class="orange-button" (click)="nextStep()">Próximo →</ion-button>
+    </div>
+
+    <!-- Etapa 2: Dados Pessoais -->
+    <div *ngIf="currentStep === 2" class="step">
+      <ion-grid class="form-grid">
+        <ion-row>
+          <ion-col size="12" size-md="6">
+            <ion-item>
+              <ion-label position="floating">Data de Nascimento</ion-label>
+              <ion-datetime
+                display-format="DD/MM/YYYY"
+                picker-format="DD MMMM YYYY"
+                [(ngModel)]="dataNascimento"
+              ></ion-datetime>
+            </ion-item>
+          </ion-col>
+          
+
+          <!-- E-mail Universitário -->
+          <ion-col size="12" size-md="6">
+            <ion-item>
+              <ion-label position="floating">E-mail Universitário</ion-label>
+              <ion-input type="email" [(ngModel)]="email"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <!-- Senha -->
+          <ion-col size="12" size-md="6">
+            <ion-item>
+              <ion-label position="floating">Senha</ion-label>
+              <ion-input type="password" [(ngModel)]="senha"></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <!-- Confirmação de Senha -->
+          <ion-col size="12" size-md="6">
+            <ion-item>
+              <ion-label position="floating">Confirmação de Senha</ion-label>
+              <ion-input type="password" [(ngModel)]="confirmacaoSenha"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <!-- Universidade -->
+          <ion-col size="12" size-md="6">
+            <ion-item>
+              <ion-label position="floating">Universidade</ion-label>
+              <ion-input type="text" [(ngModel)]="universidade"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <!-- Gênero -->
+          <ion-col size="12" size-md="6">
+            <ion-item>
+              <ion-label>Gênero</ion-label>
+              <ion-select placeholder="Escolha seu gênero" [(ngModel)]="genero">
+                <ion-select-option value="masculino">Masculino</ion-select-option>
+                <ion-select-option value="feminino">Feminino</ion-select-option>
+                <ion-select-option value="outro">Outro</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <!-- Celular -->
+          <ion-col size="12" size-md="6">
+            <ion-item>
+              <ion-label position="floating">Celular</ion-label>
+              <ion-input type="tel" [(ngModel)]="celular"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <!-- Período -->
+          <ion-col size="12" size-md="6">
+            <ion-item>
+              <ion-label position="floating">Período</ion-label>
+              <ion-input type="text" [(ngModel)]="periodo"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <!-- Discord -->
+          <ion-col size="12" size-md="6">
+            <ion-item>
+              <ion-label position="floating">Discord(Opicional)</ion-label>
+              <ion-input type="text" [(ngModel)]="discord"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <!-- O que você curte -->
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label>O que você curte?</ion-label>
+              <ion-radio-group [(ngModel)]="curte">
+                <ion-item>
+                  <ion-label>FPS</ion-label>
+                  <ion-radio value="fps"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>MMORPG</ion-label>
+                  <ion-radio value="mmorpg"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>RPG</ion-label>
+                  <ion-radio value="rpg"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Simulação</ion-label>
+                  <ion-radio value="simulacao"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Outros</ion-label>
+                  <ion-radio value="outros"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <!-- O que você procura -->
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label>O que procura?</ion-label>
+              <ion-radio-group [(ngModel)]="procura">
+                <ion-item>
+                  <ion-label>DUO</ion-label>
+                  <ion-radio value="duo"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>TRIO</ion-label>
+                  <ion-radio value="trio"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>SQUAD</ion-label>
+                  <ion-radio value="squad"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>PT FULL</ion-label>
+                  <ion-radio value="ptfull"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Relacionamento</ion-label>
+                  <ion-radio value="relacionamento"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <!-- Onde você joga -->
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label>Onde joga?</ion-label>
+              <ion-radio-group [(ngModel)]="joga">
+                <ion-item>
+                  <ion-label>PC</ion-label>
+                  <ion-radio value="pc"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Xbox</ion-label>
+                  <ion-radio value="xbox"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>PlayStation</ion-label>
+                  <ion-radio value="playstation"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Nintendo</ion-label>
+                  <ion-radio value="nintendo"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Mobile</ion-label>
+                  <ion-radio value="mobile"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Outros</ion-label>
+                  <ion-radio value="outros"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-button expand="block" class="orange-button" (click)="nextStep()">→</ion-button>
+    </div>
+
+    <!-- Etapa 3: Perfil e Fotos -->
+    <div *ngIf="currentStep === 3" class="step">
+      <h2>Monte seu perfil:</h2>
+      <p class="step-description">Carregue ao menos 2 fotos para começar</p>
+      <div class="photos-container">
+        <div *ngFor="let photo of photos; let i = index" class="photo-box">
+          <img *ngIf="photo" [src]="photo" alt="Foto">
+          <ion-button *ngIf="!photo" (click)="addPhoto(i)">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+      <ion-button expand="block" class="orange-button" (click)="completeRegistration()">Finalizar →</ion-button>
+    </div>
+  </div>
+</ion-content>

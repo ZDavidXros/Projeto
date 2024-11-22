@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="text-center">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" fullscreen>
+  <div class="login-container text-center">
+    <img src="assets/logo.png" class="logo mb-4" alt="Logo">
+
+    <ion-item class="mb-3">
+      <ion-input 
+        placeholder="E-mail universitário" 
+        type="email" 
+        [(ngModel)]="email">
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="mb-3">
+      <ion-input 
+        placeholder="Senha" 
+        type="password" 
+        [(ngModel)]="senha">
+      </ion-input>
+    </ion-item>
+
+    <ion-button expand="block" class="orange-button mb-2" (click)="login()">
+      Entrar
+    </ion-button>
+
+    <div class="d-flex gap-1 w-50 justify-content-center">
+      <ion-button expand="block" class="orange-button" [routerLink]="['/home']">
+        Voltar
+      </ion-button>
+    
+      <ion-button expand="block" class="orange-button" [routerLink]="['/cadastro']">
+        Cadastre-se
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

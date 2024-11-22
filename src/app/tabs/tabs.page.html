@@ -1,0 +1,60 @@
+<ion-menu content-id="tabs-content" side="start" menu-id="tabs-menu">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <!-- Link para a página "Sobre Nós" -->
+      <ion-item routerLink="/fotos" routerDirection="root">
+        <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+        <ion-label>Sobre Nós</ion-label>
+      </ion-item>
+
+      <!-- Link para Sair -->
+      <ion-buttons slot="end">
+        <ion-button (click)="logout()">
+          <ion-label>Sair</ion-label>
+        </ion-button>
+      </ion-buttons>
+  
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Botão para abrir o menu -->
+      <ion-menu-button menu="tabs-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Unilab App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Conteúdo principal associado ao menu -->
+<ion-content id="tabs-content">
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" color="light">
+      <!-- Tab para Match -->
+      <ion-tab-button tab="tab1" routerLink="/tab1" routerDirection="root">
+        <ion-icon name="heart-outline"></ion-icon>
+        <ion-label>Match</ion-label>
+      </ion-tab-button>
+
+      <!-- Tab para Chats -->
+      <ion-tab-button tab="tab2" routerLink="/tab2" routerDirection="root">
+        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+        <ion-label>Chats</ion-label>
+      </ion-tab-button>
+
+      <!-- Tab para Perfil -->
+      <ion-tab-button tab="tab3" routerLink="/tab3" routerDirection="root">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label>Perfil</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

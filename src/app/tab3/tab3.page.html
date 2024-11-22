@@ -1,0 +1,119 @@
+<ion-header>
+  
+</ion-header>
+
+<ion-content>
+  <ion-grid class="profile-container">
+    <!-- Monte seu perfil -->
+    <ion-row>
+      <ion-col size="12" class="text-center">
+        <h2>{{ user.nome || 'Seu Nome' }}</h2>
+        <p>{{ user.universidade || 'Sua Universidade' }}</p>
+        <div class="profile-photo-container">
+          <img *ngIf="user.fotoPerfil" [src]="user.fotoPerfil" alt="Foto de Perfil" class="profile-photo">
+          <ion-button fill="clear" (click)="editProfilePhoto()">Alterar Foto de Perfil</ion-button>
+          <ion-icon name="pencil-outline"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-col size="12" class="text-center">   
+      
+    </ion-col>
+    <ion-col  class="text-center">   
+      <h2>Fotos de Exibição</h2>
+    </ion-col>
+    <div class="photos-container">
+      <!-- Caixas para fotos adicionais -->
+      <div *ngFor="let photo of user.fotos; let i = index" class="photo-box">
+        <img *ngIf="photo" [src]="photo" alt="Foto Adicional {{i+1}}">
+        <ion-button *ngIf="!photo" (click)="addPhoto(i)">
+          <ion-icon name="add-circle-outline"></ion-icon>
+        </ion-button>
+      </div>
+
+      <ion-button expand="block" color="danger" (click)="removeAllPhotos()">Remover Todas as Fotos</ion-button>
+    </div>
+    
+
+
+    <!-- Campos de edição -->
+    <ion-list>
+      
+        <ion-item>
+          <ion-label position="stacked">Nome</ion-label>
+          <ion-input [(ngModel)]="user.nome" placeholder="Seu Nome"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Universidade</ion-label>
+          <ion-input [(ngModel)]="user.universidade" placeholder="Sua Universidade"></ion-input>
+        </ion-item>
+    
+    
+      <ion-item>
+        <ion-label position="stacked">Celular</ion-label>
+        <ion-input [(ngModel)]="user.celular" placeholder="Seu celular"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Curte o que?</ion-label>
+        <ion-select [(ngModel)]="user.curte">
+          <ion-select-option value="fps">FPS</ion-select-option>
+          <ion-select-option value="mmorpg">MMORPG</ion-select-option>
+          <ion-select-option value="rpg">RPG</ion-select-option>
+          <ion-select-option value="simulacao">Simulação</ion-select-option>
+          <ion-select-option value="outros">Outros</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      
+      <ion-item>
+        <ion-label position="stacked">Discord</ion-label>
+        <ion-input [(ngModel)]="user.discord" placeholder="Seu Discord"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Gênero</ion-label>
+        <ion-select [(ngModel)]="user.genero">
+          <ion-select-option value="masculino">Masculino</ion-select-option>
+          <ion-select-option value="feminino">Feminino</ion-select-option>
+          <ion-select-option value="outro">Outro</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Onde joga?</ion-label>
+        <ion-select [(ngModel)]="user.joga">
+          <ion-select-option value="pc">PC</ion-select-option>
+          <ion-select-option value="xbox">Xbox</ion-select-option>
+          <ion-select-option value="playstation">PlayStation</ion-select-option>
+          <ion-select-option value="nintendo">Nintendo</ion-select-option>
+          <ion-select-option value="mobile">Mobile</ion-select-option>
+          <ion-select-option value="outros">Outros</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Período</ion-label>
+        <ion-input [(ngModel)]="user.periodo" placeholder="Seu período"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Procura</ion-label>
+        <ion-select [(ngModel)]="user.procura">
+          <ion-select-option value="duo">DUO</ion-select-option>
+          <ion-select-option value="trio">TRIO</ion-select-option>
+          <ion-select-option value="squad">SQUAD</ion-select-option>
+          <ion-select-option value="ptfull">PT FULL</ion-select-option>
+          <ion-select-option value="relacionamento">Relacionamento</ion-select-option>
+          <ion-select-option value="outro">Outro</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <!-- Botão de Salvar -->
+    <ion-button expand="block" color="primary" (click)="saveProfile()">
+      Salvar Alterações
+    </ion-button>
+  </ion-grid>
+</ion-content>
