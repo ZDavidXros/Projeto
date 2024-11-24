@@ -20,18 +20,30 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "src/assets",
-                "output": "assets"
-              },
-              {
-                "glob": "**/*.svg",
-                "input": "node_modules/ionicons/dist/ionicons/svg",
-                "output": "./svg"
-              }
+  {
+    "glob": "**/*",
+    "input": "src/assets",
+    "output": "assets"
+  },
+  {
+    "glob": "**/*.svg",
+    "input": "node_modules/ionicons/dist/ionicons/svg",
+    "output": "./svg"
+  },
+  {
+    "glob": "**/*",
+    "input": "node_modules/ionicons/dist/ionicons/fonts",
+    "output": "./fonts"
+  }
+
+
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
+           "styles": [
+  "src/global.scss",
+  "src/theme/variables.scss"
+  
+]
+,
             "scripts": []
           },
           "configurations": {
@@ -80,7 +92,7 @@
               "buildTarget": "app:build:development"
             },
             "ci": {
-              "progress": false
+             
             }
           },
           "defaultConfiguration": "development"
@@ -111,7 +123,7 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "styles": ["src/global.scss", "src/theme/variables.scss", "node_modules/ionicons/dist/css/ionicons.min.css"],
             "scripts": []
           },
           "configurations": {

@@ -16,10 +16,12 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
 import { AngularFireMessagingModule } from '@angular/fire/compat/messaging';
 import { AngularFireFunctionsModule } from '@angular/fire/compat/functions';
-
+import { ChatService } from './services/chat.service';
 // Importando a configuração do Firebase do environment.ts
 import { environment } from '../environments/environment';
 import { AuthService } from './services/auth.service';
+
+
 
 @NgModule({
   declarations: [AppComponent],

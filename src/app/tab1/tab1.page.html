@@ -1,13 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>tab1</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">tab1</ion-title>
-    </ion-toolbar>
+<ion-app>
+  <ion-header>
+  
   </ion-header>
-</ion-content>
+
+  <ion-content>
+    <div *ngIf="userData" class="profile-card">
+      <!-- Foto do Perfil -->
+      <img [src]="userData.fotos[currentPhotoIndex]" alt="Foto do Perfil" class="profile-img" />
+
+      <!-- Informações do Perfil -->
+      <div class="profile-info">
+        <h1>{{ userData.nome }}</h1>
+        <p class="university">{{ userData.universidade }}</p>
+      </div>
+
+      <!-- Preferências (Tags) -->
+      <div class="profile-tags">
+        <span class="tag">{{ userData.curte }}</span>
+      </div>
+
+      <!-- Biografia -->
+      <p class="description">{{ userData.biografia }}</p>
+
+      <!-- Botões -->
+      <div class="profile-actions">
+        <ion-button color="light" fill="solid" (click)="dislikeUser()">
+          <img src="assets/icons/x.png" alt="Dislike" width="24" height="24"> 
+        </ion-button>
+      
+        <ion-button color="warning" fill="solid" (click)="likeUser()">
+          <img src="assets/icons/v.png" alt="Like" width="24" height="24"> 
+        </ion-button>
+      </div>
+      
+      
+    </div>
+  </ion-content>
+</ion-app>

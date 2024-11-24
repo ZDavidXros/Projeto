@@ -1,25 +1,133 @@
-.profile-container {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .profile-image ion-avatar {
-    width: 120px;
-    height: 120px;
-    margin: auto;
-  }
-  
-  .profile-image .edit-icon {
-    position: absolute;
-    top: 100px;
-    right: 50%;
-    transform: translateX(50%);
-    font-size: 20px;
-    color: var(--ion-color-primary);
-    cursor: pointer;
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
+/* Estilo geral do cartão de perfil */
+.profile-card {
+  background: linear-gradient(145deg, #1f1f1f, #2a2a2a);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* Remove qualquer restrição de conteúdo escondido */
+}
+
+/* Foto do perfil */
+.profile-img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Informações do perfil */
+.profile-info h1 {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 12px 0;
+  color: #ff9800;
+}
+
+.profile-info .university {
+  font-size: 16px;
+  color: #bbbbbb;
+  margin-top: -8px;
+}
+
+/* Preferências (Tags) */
+.orange-button {
+  --background: #d26c24;  /* Cor laranja */
+  --color: white;         /* Texto branco */
+}
+
+
+
+/* Biografia */
+/* Preferências (Tags) */
+/* Preferências (Tags) */
+.profile-tags {
+  display: flex; /* Coloca as tags em linha ou wrap */
+  flex-wrap: wrap; /* Permite quebra de linha para tags longas */
+  justify-content: center; /* Centraliza as tags */
+  gap: 10px; /* Espaço entre as tags */
+  margin: 16px 0; /* Espaço externo */
+  padding: 0 16px; /* Espaçamento interno */
+}
+
+.profile-tags p {
+  font-size: 14px; /* Ajusta o tamanho da fonte */
+  color: #ff9800; /* Deixa o texto laranja */
+  margin: 0; /* Remove margens desnecessárias */
+  text-align: center;
+  word-break: break-word; /* Evita estouro de texto */
+}
+
+.tag {
+  background-color: #ff9800; /* Fundo laranja */
+  color: #1e1e1e; /* Texto em contraste */
+  padding: 6px 12px; /* Espaçamento interno */
+  border-radius: 16px; /* Bordas arredondadas */
+  font-size: 14px; /* Tamanho da fonte */
+  text-transform: capitalize; /* Primeira letra maiúscula */
+  white-space: nowrap; /* Evita quebra de linha */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Leve sombra */
+}
+
+
+/* Biografia */
+.description {
+  font-size: 16px; /* Aumenta o tamanho do texto */
+  font-style: italic; /* Estilo cursivo para biografia */
+  text-align: justify; /* Justifica o texto */
+  margin: 20px 0; /* Espaçamento acima e abaixo */
+  padding: 12px; /* Espaçamento interno */
+  color: #e0e0e0; /* Cor leve e contrastante */
+  line-height: 1.8; /* Torna o texto mais legível */
+  border-left: 4px solid #ff9800; /* Barra decorativa */
+  background-color: #2b2b2b; /* Fundo para destacar a biografia */
+  border-radius: 8px; /* Bordas arredondadas */
+}
+
+
+/* Botões */
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.profile-actions ion-button {
+  margin: 8px;
+  --border-radius: 20px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+}
+
+ion-button[color="danger"] {
+  --background: #e53935;
+  --background-hover: #d32f2f;
+}
+
+ion-button[color="success"] {
+  --background: #43a047;
+  --background-hover: #388e3c;
+}
+
+ion-button[color="tertiary"] {
+  --background: transparent;
+  --color: #2196f3;
+  --border-color: #2196f3;
+}
+
+ion-button[color="primary"] {
+  --background: transparent;
+  --color: #3f51b5;
+  --border-color: #3f51b5;
+}

@@ -31,13 +31,18 @@
         </ion-button>
       </div>
 
-      <ion-button expand="block" color="danger" (click)="removeAllPhotos()">Remover Todas as Fotos</ion-button>
+      <ion-button expand="block" class="orange-button" (click)="removeAllPhotos()">Remover Todas as Fotos</ion-button>
     </div>
     
-
+    <h2>Editar Informações</h2>
 
     <!-- Campos de edição -->
     <ion-list>
+
+      <ion-item>
+        <ion-label position="stacked">Biografia</ion-label>
+        <ion-textarea [(ngModel)]="user.biografia" placeholder="Escreva sua biografia"></ion-textarea>
+      </ion-item>
       
         <ion-item>
           <ion-label position="stacked">Nome</ion-label>
@@ -57,7 +62,7 @@
 
       <ion-item>
         <ion-label position="stacked">Curte o que?</ion-label>
-        <ion-select [(ngModel)]="user.curte">
+        <ion-select [(ngModel)]="user.curte" multiple="true">
           <ion-select-option value="fps">FPS</ion-select-option>
           <ion-select-option value="mmorpg">MMORPG</ion-select-option>
           <ion-select-option value="rpg">RPG</ion-select-option>
@@ -112,7 +117,7 @@
     </ion-list>
 
     <!-- Botão de Salvar -->
-    <ion-button expand="block" color="primary" (click)="saveProfile()">
+    <ion-button expand="block" class="orange-button" (click)="saveProfile()">
       Salvar Alterações
     </ion-button>
   </ion-grid>

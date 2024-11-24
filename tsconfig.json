@@ -24,12 +24,11 @@
     "useDefineForClassFields": false,
     "typeRoots": [
       "node_modules/@types",
-      "node_modules/firebase",
-      "node_modules/date-fns"
+      "node_modules/firebase"
     ],
-    "types": [
-      "date-fns"
-    ]
+    "types": [""],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

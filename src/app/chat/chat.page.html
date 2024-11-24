@@ -1,0 +1,31 @@
+<ion-header>
+ 
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let message of messages" [ngClass]="{ 'my-message': message.userId === currentUser?.uid, 'other-message': message.userId !== currentUser?.uid }">
+      <ion-avatar *ngIf="message.userId !== currentUser?.uid" slot="start">
+       
+      </ion-avatar>
+      <ion-label>
+        <p>{{ message.text }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+  <ion-footer>
+    <ion-toolbar>
+      <div class="input-container">
+        <ion-input 
+          [(ngModel)]="newMessage" 
+          placeholder="Digite sua mensagem"
+          clearInput="true"
+          (keydown)="handleKeydown($event)">
+        </ion-input>
+        <ion-button (click)="sendMessage()">Enviar</ion-button>
+      </div>
+    </ion-toolbar>
+  </ion-footer>

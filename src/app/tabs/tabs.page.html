@@ -9,9 +9,11 @@
     <ion-list>
       <!-- Link para a página "Sobre Nós" -->
       <ion-item routerLink="/fotos" routerDirection="root">
-        <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+        
         <ion-label>Sobre Nós</ion-label>
       </ion-item>
+
+      
 
       <!-- Link para Sair -->
       <ion-buttons slot="end">
@@ -23,6 +25,7 @@
     </ion-list>
   </ion-content>
 </ion-menu>
+
 
 <ion-header>
   <ion-toolbar>
@@ -37,22 +40,22 @@
 <!-- Conteúdo principal associado ao menu -->
 <ion-content id="tabs-content">
   <ion-tabs>
-    <ion-tab-bar slot="bottom" color="light">
+    <ion-tab-bar slot="bottom" >
       <!-- Tab para Match -->
-      <ion-tab-button tab="tab1" routerLink="/tab1" routerDirection="root">
-        <ion-icon name="heart-outline"></ion-icon>
+      <ion-tab-button tab="tab1" routerLink="/tabs/tab1" >
+        <img src="assets/icons/Multi.png" alt="Match" style="width: 24px; height: 24px;">
         <ion-label>Match</ion-label>
       </ion-tab-button>
 
       <!-- Tab para Chats -->
-      <ion-tab-button tab="tab2" routerLink="/tab2" routerDirection="root">
-        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+      <ion-tab-button tab="tab2" routerLink="/tabs/tab2" >
+        <img src="assets/icons/chat.png" alt="Chats" style="width: 24px; height: 24px;">
         <ion-label>Chats</ion-label>
       </ion-tab-button>
 
       <!-- Tab para Perfil -->
-      <ion-tab-button tab="tab3" routerLink="/tab3" routerDirection="root">
-        <ion-icon name="person-circle-outline"></ion-icon>
+      <ion-tab-button tab="tab3" routerLink="/tabs/tab3" >
+        <img src="assets/icons/perfil.png" alt="Perfil" style="width: 24px; height: 24px;">
         <ion-label>Perfil</ion-label>
       </ion-tab-button>
     </ion-tab-bar>

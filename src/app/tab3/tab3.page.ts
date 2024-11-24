@@ -14,7 +14,7 @@ export class Tab3Page implements OnInit {
     nome: '',
     universidade: '',
     celular: '',
-    curte: '',
+    curte: [],
     dataNascimento: '',
     discord: '',
     genero: '',
@@ -22,7 +22,8 @@ export class Tab3Page implements OnInit {
     periodo: '',
     procura: '',
     fotos: ['', '', '',''], 
-    fotoPerfil: ''
+    fotoPerfil: '',
+    biografia: '',
   };
   router: any;
 
@@ -149,7 +150,13 @@ export class Tab3Page implements OnInit {
       }
       if (this.user.fotos.length > 0) {
         updatedData.fotos = this.user.fotos.filter((photo: string | null) => photo !== null);
+        
       }
+
+      if (this.user.biografia) {
+        updatedData.biografia = this.user.biografia;
+      }
+      
       if (this.user.nome) {
         updatedData.nome = this.user.nome;
       }
@@ -159,9 +166,10 @@ export class Tab3Page implements OnInit {
       if (this.user.celular) {
         updatedData.celular = this.user.celular;
       }
-      if (this.user.curte) {
-        updatedData.curte = this.user.curte;
+      if (this.user.curte && this.user.curte.length > 0) {
+        updatedData.curte = this.user.curte; // Salva o array completo
       }
+      
       if (this.user.dataNascimento) {
         updatedData.dataNascimento = this.user.dataNascimento;
       }

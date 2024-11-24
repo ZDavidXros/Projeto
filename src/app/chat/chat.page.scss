@@ -1,0 +1,83 @@
+ion-content {
+  padding: 0;
+  height: 100%;
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+}
+.my-message, .other-message {
+  padding: 1px 1px; /* Espaçamento interno */
+  border-radius: 10px; /* Balão arredondado */
+  margin: 8px; /* Espaçamento entre as mensagens */
+  max-width: 50%; /* Limita a largura dos balões */
+  word-wrap: break-word; /* Quebra palavras muito longas */
+  white-space: pre-wrap; /* Quebra automática de linhas */
+  font-size: 15px; /* Tamanho do texto */
+  color: #fff; /* Cor do texto */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borda fina e discreta */
+  box-shadow: none; /* Remove sombras adicionais */
+}
+
+.my-message {
+   /* Fundo laranja */
+  align-self: flex-end; /* Alinha à direita */
+  text-align: left;
+  border-color: rgba(255, 140, 0, 0.5); /* Borda laranja mais clara */
+}
+
+.other-message {
+  /* Fundo cinza escuro */
+  align-self: flex-start; /* Alinha à esquerda */
+  text-align: left;
+  border-color: rgba(255, 255, 255, 0.1); /* Borda cinza bem discreta */
+}
+
+ion-list {
+  display: flex;
+  flex-direction: column; /* Alinhar mensagens em coluna */
+  padding: 10px; /* Ajuste no espaçamento */
+  gap: 8px; /* Espaço uniforme entre as mensagens */
+}
+
+ion-item {
+  background: transparent; /* Remove fundo padrão do item */
+  --padding-start: 0; /* Remove padding do início */
+}
+
+ion-footer {
+  background-color: #1e1e1e; /* Fundo escuro no rodapé */
+  border-top: 1px solid #333; /* Linha sutil no topo */
+  padding: 10px;
+}
+
+ion-toolbar {
+  padding: 0; /* Remove padding interno padrão */
+}
+
+.input-container {
+  display: flex; /* Itens em linha */
+  align-items: center; /* Alinhamento vertical centralizado */
+  width: 100%; /* Ocupa toda a largura disponível */
+  gap: 10px; /* Espaçamento entre o input e o botão */
+}
+
+ion-input {
+  background: #2e2e2e; /* Fundo escuro no campo */
+  color: #fff; /* Texto branco */
+  border-radius: 20px; /* Campo arredondado */
+  padding: 10px 15px; /* Espaçamento interno */
+  flex: 1; /* O campo ocupa todo o espaço restante */
+}
+
+ion-button {
+  border-radius: 20px; /* Botão arredondado */
+  --background: #ff6f00; /* Fundo laranja vibrante */
+  color: #fff; /* Texto branco */
+  font-size: 14px; /* Texto menor */
+  height: 40px; /* Altura do botão */
+  width: 80px; /* Largura do botão */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza o texto */
+  padding: 0; /* Remove espaçamento interno */
+}

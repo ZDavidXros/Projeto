@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { TabsPage } from './tabs.page';
-import { TabsPageRoutingModule } from './tabs-routing.module';  // O módulo de rotas das tabs
+import { TabsPageRoutingModule } from './tabs-routing.module'; 
+ // O módulo de rotas das tabs
 
 @NgModule({
   imports: [

@@ -41,7 +41,7 @@ export class TabsPage implements OnInit {
         if (user) {
           this.loadUserData();
         } else if (user === null) { // Apenas redireciona se explicitamente deslogado
-          this.router.navigate(['/login']);
+          this.router.navigate(['/home']);
         }
       });
     }

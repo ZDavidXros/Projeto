@@ -31,7 +31,8 @@
               ></ion-datetime>
             </ion-item>
           </ion-col>
-          
+          </ion-row>
+
 
           <!-- E-mail Universitário -->
           <ion-col size="12" size-md="6">
@@ -40,9 +41,9 @@
               <ion-input type="email" [(ngModel)]="email"></ion-input>
             </ion-item>
           </ion-col>
-        </ion-row>
+        
 
-        <ion-row>
+        
           <!-- Senha -->
           <ion-col size="12" size-md="6">
             <ion-item>
@@ -58,9 +59,9 @@
               <ion-input type="password" [(ngModel)]="confirmacaoSenha"></ion-input>
             </ion-item>
           </ion-col>
-        </ion-row>
+        
 
-        <ion-row>
+        
           <!-- Universidade -->
           <ion-col size="12" size-md="6">
             <ion-item>
@@ -68,23 +69,23 @@
               <ion-input type="text" [(ngModel)]="universidade"></ion-input>
             </ion-item>
           </ion-col>
-        </ion-row>
+      
 
-        <ion-row>
+        
           <!-- Gênero -->
           <ion-col size="12" size-md="6">
             <ion-item>
               <ion-label>Gênero</ion-label>
-              <ion-select placeholder="Escolha seu gênero" [(ngModel)]="genero">
+              <ion-select  [(ngModel)]="genero">
                 <ion-select-option value="masculino">Masculino</ion-select-option>
                 <ion-select-option value="feminino">Feminino</ion-select-option>
                 <ion-select-option value="outro">Outro</ion-select-option>
               </ion-select>
             </ion-item>
           </ion-col>
-        </ion-row>
+    
 
-        <ion-row>
+       
           <!-- Celular -->
           <ion-col size="12" size-md="6">
             <ion-item>
@@ -92,9 +93,9 @@
               <ion-input type="tel" [(ngModel)]="celular"></ion-input>
             </ion-item>
           </ion-col>
-        </ion-row>
+     
 
-        <ion-row>
+     
           <!-- Período -->
           <ion-col size="12" size-md="6">
             <ion-item>
@@ -102,9 +103,8 @@
               <ion-input type="text" [(ngModel)]="periodo"></ion-input>
             </ion-item>
           </ion-col>
-        </ion-row>
+        
 
-        <ion-row>
           <!-- Discord -->
           <ion-col size="12" size-md="6">
             <ion-item>
@@ -112,7 +112,7 @@
               <ion-input type="text" [(ngModel)]="discord"></ion-input>
             </ion-item>
           </ion-col>
-        </ion-row>
+        
 
         <!-- O que você curte -->
         <ion-row>

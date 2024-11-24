@@ -1,19 +1,20 @@
-import { Component } from '@angular/core';
-import { CometChat } from "@cometchat-pro/chat";
-import { environment } from '../environments/environment';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent {
-  constructor(private authService: AuthService, private router: Router) 
-  {
-    this.initializeCometChat();
+export class AppComponent implements OnInit {
+  constructor(private authService: AuthService, private router: Router, private platform: Platform) {
+    this.platform.ready().then(() => {
+      document.body.classList.add('dark'); // Força o tema escuro
+    });
   }
+
   ngOnInit() {
     this.authService.user$.subscribe((user) => {
       if (user) {
@@ -21,22 +22,5 @@ export class AppComponent {
         this.router.navigate(['/tabs']);
       }
     });
-  }
-  
-  initializeCometChat() {
-    const appID = environment.cometChatConfig.appID;     // ID do seu aplicativo
-    const region = environment.cometChatConfig.region;   // Região do CometChat
-    const authKey = environment.cometChatConfig.authKey; // Chave de autenticação
-
-    const appSetting = new CometChat.AppSettingsBuilder().setRegion(region).build();
-
-    CometChat.init(appID, appSetting).then(
-      () => {
-        console.log("CometChat foi inicializado com sucesso");
-      },
-      (error) => {
-        console.log("Erro ao inicializar o CometChat:", error);
-      }
-    );
   }
 }

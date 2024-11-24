@@ -9,9 +9,5 @@ export const environment = {
     appId: "1:109511439884:web:5506f6120abe3218002029",
     measurementId: "G-R0E108GNWP"
   },
-  cometChatConfig: {
-    appID: "267118168947cc21",
-    region: "us",
-    authKey: "eb45d0754df6dce2fbfd25446218decee570da36"
-  }
+  
 };

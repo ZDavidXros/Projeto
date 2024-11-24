@@ -26,7 +26,18 @@
 @import "@ionic/angular/css/flex-utils.css";
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+:root {
+    --ion-color-scheme: dark;
+    --ion-background-color: #000;  /* Cor de fundo preta */
+    --ion-text-color: #fff;        /* Cor do texto branca */
+  }
+  
+  body {
+    background-color: #000;
+    color: #fff;
+  }
 
+  
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------

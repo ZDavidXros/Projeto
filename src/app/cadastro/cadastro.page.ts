@@ -5,6 +5,7 @@ import { AuthService } from '../services/auth.service';  // Importe o AuthServic
 import { Router } from '@angular/router';
 
 interface UserData {
+  uid: string;
   nome: string;
   dataNascimento: string;
   email: string;
@@ -212,6 +213,7 @@ export class CadastroPage {
     try {
       // Criando um objeto userData que agora tem a tipagem UserData
       const userData: UserData = {
+        uid: '', 
         nome: this.nome,
         dataNascimento: this.dataNascimento,  // Sem formatar
         email: this.email,
